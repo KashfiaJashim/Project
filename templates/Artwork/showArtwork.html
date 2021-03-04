@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Artworks</title>
+</head>
+<body>
+<h2> ARTWORKS </h2>
+{% for a in all_artwork %}
+    <p>
+        <b>Artwork Title:</b>{{ a.title }}<br>
+        <b>Medium:</b>{{ a.medium }}<br>
+        <b>Category:</b>{{ a.category }}<br>
+        <b>Art:</b>{{ a.art }}<br>
+        <b>Art Description:</b>{{ a.art_description }}
+    </p>
+{% endfor %}
+</body>
+</html>

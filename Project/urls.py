@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls.static import static
 from Profile import views as profileView
+from Artwork import views as Artworkview
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('homepage/', profileView.showHome, name='showHome'),
-    path('registration/', profileView.registration, name='registration')
+    path('registration/', profileView.registration, name='registration'),
+    path('ShowArtwork/', Artworkview.showArtwork, name='ShowArtwork'),
 ]
