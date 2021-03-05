@@ -24,4 +24,5 @@ urlpatterns = [
     path('homepage/', profileView.showHome, name='showHome'),
     path('registration/', profileView.registration, name='registration'),
     path('ShowArtwork/', Artworkview.showArtwork, name='ShowArtwork'),
+    path('InsertArtwork/', Artworkview.insertArtwork, name='InsertArtwork'),
 ]
