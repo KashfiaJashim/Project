@@ -18,6 +18,7 @@ from django.urls import path
 from django.conf.urls.static import static
 from Profile import views as profileView
 from Artwork import views as Artworkview
+from Blog import views as Blog_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,4 +26,6 @@ urlpatterns = [
     path('registration/', profileView.registration, name='registration'),
     path('ShowArtwork/', Artworkview.showArtwork, name='ShowArtwork'),
     path('InsertArtwork/', Artworkview.insertArtwork, name='InsertArtwork'),
+    path('ShowBlogs/', Blog_views.showBlog,name='ShowBlogs'),
+    path('InsertBlogs/', Blog_views.insertBlog,name='InsertBlogs'),
 ]
