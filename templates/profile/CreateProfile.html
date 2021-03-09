@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Profile</title>
+</head>
+<body>
+
+
+
+<h2>Create your profile here: </h2><br>
+    {{  message }}
+
+ <form method="POST" enctype="multipart/form-data">
+
+     {% csrf_token %}
+
+     {{ form.as_p}}
+
+     <input type="submit">
+
+ </form>
+
+</body>
+</html>

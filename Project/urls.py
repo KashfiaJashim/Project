@@ -22,8 +22,10 @@ from Blog import views as Blog_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('homepage/', profileView.showHome, name='showHome'),
-    path('registration/', profileView.registration, name='registration'),
+    path('homepage/', profileView.showHome, name='Homepage'),
+    path('signup/', profileView.registration, name='signup'),
+    path('createProfile/', profileView.createprofile, name='createProfile'),
+    path('showProfile/', profileView.showProfile, name='showProfile'),
     path('ShowArtwork/', Artworkview.showArtwork, name='ShowArtwork'),
     path('InsertArtwork/', Artworkview.insertArtwork, name='InsertArtwork'),
     path('ShowBlogs/', Blog_views.showBlog,name='ShowBlogs'),
