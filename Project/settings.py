@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'Profile.apps.ProfileConfig',
     'Artwork.apps.ArtworkConfig',
     'Blog.apps.BlogConfig',
+    'Event.apps.EventConfig',
 ]
 
 MIDDLEWARE = [

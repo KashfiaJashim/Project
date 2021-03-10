@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from Profile import views as profileView
 from Artwork import views as Artworkview
 from Blog import views as Blog_views
+from Event import views as EventView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,4 +31,10 @@ urlpatterns = [
     path('InsertArtwork/', Artworkview.insertArtwork, name='InsertArtwork'),
     path('ShowBlogs/', Blog_views.showBlog,name='ShowBlogs'),
     path('InsertBlogs/', Blog_views.insertBlog,name='InsertBlogs'),
+    path('Competition/',EventView.showcompetition,name='Competition'),
+    path('Competition/<int:comp_id>', EventView.showDetails, name='detail_view'),
+    path('SubmitCompetition/', EventView.submitart, name='SubmitCompetition'),
+    path('ShowSubmission/', EventView.showSubmission, name='ShowSubmission'),
+
+
 ]
