@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Artwork
 from .forms import ArtworkForm
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 def showArtwork(request):
     artwork = Artwork.objects.all()
@@ -10,6 +11,7 @@ def showArtwork(request):
     }
     return render(request, 'Artwork/showArtwork.html', context)
 
+@login_required
 def insertArtwork(request):
     message = ""
     form = ArtworkForm()
