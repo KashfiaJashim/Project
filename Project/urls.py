@@ -21,6 +21,8 @@ from Artwork import views as Artworkview
 from Blog import views as Blog_views
 from django.conf import settings
 from django.conf.urls.static import static
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('homepage/', profileView.showHome, name='homepage'),
@@ -30,6 +32,7 @@ urlpatterns = [
     path('ShowArtwork/', Artworkview.showArtwork, name='ShowArtwork'),
     path('InsertArtwork/', Artworkview.insertArtwork, name='InsertArtwork'),
     path('ShowBlogs/', Blog_views.showBlog,name='ShowBlogs'),
+    path('ShowBlogs/<int:b_id>', Blog_views.showDetails, name='detail_view'),
     path('InsertBlogs/', Blog_views.insertBlog,name='InsertBlogs'),
     path('accounts/',include('django.contrib.auth.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
