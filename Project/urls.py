@@ -32,7 +32,6 @@ urlpatterns = [
     path('ShowArtwork/', Artworkview.showArtwork, name='ShowArtwork'),
     path('InsertArtwork/', Artworkview.insertArtwork, name='InsertArtwork'),
     path('ShowBlogs/', Blog_views.showBlog,name='ShowBlogs'),
-    path('ShowBlogs/<int:b_id>', Blog_views.showDetails, name='detail_view'),
     path('InsertBlogs/', Blog_views.insertBlog,name='InsertBlogs'),
     path('accounts/',include('django.contrib.auth.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
