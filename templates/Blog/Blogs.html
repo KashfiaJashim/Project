@@ -1,33 +1,51 @@
-{% extends 'Base.html' %}
+
+{% extends 'Base_blog.html' %}
 
 {% load static %}
 
 {% block content %}
 
-<div class="row row-cols-1 row-cols-md-3">
+    <center><i><h2 style="color: black">BLOGS</h2></center></i></center><br>
+    <center><img src="https://www.digitalmeetsculture.net/wp-content/uploads/2012/01/ART-minjae-lee_Circulation-detail.jpg" hight="100" width="600" class="img-fluid" alt="Responsive image"></center><br>
 
-        {% for b in blogs %}
 
-                <div class="col mb-4">
-                  <div class="card h-100" >
-                    <img src="{{ b.image.url }}"class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">{{ b.id }}</h5>
-                      <p class="card-text">
-                          <h3>{{ b.title }}</h3>
+    <p><h3><i>ART BLOG</h3></p></i>
+    <p><h5><i>Art blog is a common type of blog that comments on art. Art blogs that adopt this sort of change can develop to become a source of
+           information on art events (listings and maps), a way to share information and images, or virtual meeting ground.Art blogs may also
+           serve as a forum to reach out to anybody interested in art — be it painting, sculpture, print making, creative photography, video art,
+           conceptual art or new media. In this way, they may be visited not only for the practitioners of different forms of art, but also collectors,
+           connoisseurs, and critics.</h5></p></i>
 
-                      </p>
+    <p><h5> <i>Artisans Club make the way for you to meet with your passion for art through the blogs of different genre.
+               Not only about paintings but also about painters, print making or any kind of conceptual art forms.So, visit our website,
+               grab your interest. Or You may express your thoughts, share what you cherish for.....</h5></p></i>
+
+    <p><h5><i>Write whatever you want. Make the world see through your vision.....</h5></p></i>
+
+
+
+
+    <div class="card-columns">
+
+{% for b in blogs %}
+        <div class="card">
+                <img src="{{ b.image.url }}" class="card-img-top" alt="..." height="300 width="250">
+                <div class="card-body">
+                  <h5 class="card-title">{{ b.id }}</h5>
+                  <p class="card-text"> <h3>{{ b.title }}</h3></p>
 
                         {# http://127.0.0.1:8000/products/    #}
-                        <a href="{{ b.id }}">
-                            {# http://127.0.0.1:8000/products/product_id    #}
-                            <button type="button" class="btn btn-outline-primary">Details</button>
-                        </a>
+                <a href="{{ b.id }}">
+                    {# http://127.0.0.1:8000/products/product_id    #}
+                    <button type="button" class="btn btn-outline-primary">Details</button>
+                </a>
                     </div>
-                  </div>
-                </div>
+      </div>
 
-        {% endfor %}
+
+
+    {% endfor %}
+
 
 
 </div>

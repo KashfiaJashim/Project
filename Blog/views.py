@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, get_object_or_404
 from .models import Blog
 from .forms import BlogForm
 
@@ -11,7 +12,7 @@ def showBlog(request):
     }
     return render(request, 'Blog/Blogs.html', context)
 
-
+@login_required
 def insertBlog(request):
     form = BlogForm()
     message = ""
@@ -33,3 +34,4 @@ def insertBlog(request):
     }
 
     return render(request, 'Blog/InsertBlog.html', context)
+

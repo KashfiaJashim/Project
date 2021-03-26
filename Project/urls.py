@@ -22,6 +22,8 @@ from Blog import views as Blog_views
 from Event import views as EventView
 from django.conf import settings
 from django.conf.urls.static import static
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('homepage/', profileView.showHome, name='homepage'),
