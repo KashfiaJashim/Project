@@ -1,0 +1,207 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Project</title>
+
+</head>
+
+<body>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Artisan Club</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'Homepage' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+        <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Profile
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'ShowProfile' %}">My Profile</a>
+          <a class="dropdown-item" href="{% url 'CreateProfile' %}">Update Profile</a>
+
+        </div>
+      </li>
+
+        <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Artwork
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'ShowArtwork' %}">Artworks</a>
+          <a class="dropdown-item" href="{% url 'InsertArtwork' %}">Upload New</a>
+
+        </div>
+      </li>
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Event
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'Competition' %}">Competitions</a>
+          <a class="dropdown-item" href="{% url 'SubmitCompetition' %}">Submit Art</a>
+            <a class="dropdown-item" href="{% url 'ShowSubmission' %}">Show Submitted Artwork</a>
+
+
+        </div>
+      </li>
+        <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         Blog
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'ShowBlogs' %}">Blogs</a>
+          <a class="dropdown-item" href="{% url 'InsertBlogs' %}">Upload New</a>
+
+        </div>
+      </li>
+
+     <li class="nav-item active">
+         {% if user.is_authenticated %}
+            <h3 style="color: #aaaaaa">{{ user.username }}</h3>
+        {% else %}
+            <h3 style="color: #aaaaaa"> Stranger!</h3>
+
+        {% endif %}
+
+     </li>
+
+    <li class="nav-item active">
+        {% if user.is_authenticated %}
+
+            <a class="nav-link" href="{% url 'logout' %}">Logout <span class="sr-only">(current)</span></a>
+        {% else %}
+            <a class="nav-link" href="{% url 'signup' %}">SignUp <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{% url 'login' %}">Login <span class="sr-only">(current)</span></a>
+
+        {% endif %}
+
+
+     </li>
+
+
+
+
+    </ul>
+    <form method="POST" action="{% url 'ShowArtwork' %}" >
+                {% csrf_token %}
+
+              <input  type="search" name="search">
+
+              <button  type="submit">Search</button>
+        </form>
+  </div>
+</nav>
+<!-- nav -->
+
+
+
+
+
+
+
+{% block content %}
+
+{% endblock content %}
+
+
+<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+
+<footer class="page-footer font-small unique-color-dark">
+
+        <!--Footer Links-->
+        <div class="container mt-5 mb-4 text-center text-md-left">
+            <div class="row mt-3">
+
+                <!--First column-->
+                <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Artisan Club</strong>
+                    </h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>Here you'll get impressive artworks done by our users. We organize competitions and by signing
+                        up you can participate there online.</p>
+                </div>
+                <!--/.First column-->
+
+                <!--Second column-->
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Follow us</strong>
+                    </h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <a href="#!">Facebook</a>
+                    </p>
+                    <p>
+                        <a href="#!">Instagram</a>
+                    </p>
+                    <p>
+                        <a href="#!">Twitter</a>
+                    </p>
+
+                </div>
+                <!--/.Second column-->
+
+                 <div style="margin: 5px 0;">
+
+
+
+
+        </div>
+
+                <!--Fourth column-->
+                <div class="col-md-4 col-lg-3 col-xl-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <strong>Contact</strong>
+                    </h6>
+                    <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+                    <p>
+                        <i class="fas fa-home"></i></i> Dhaka, 1205, Bangladesh</p>
+                    <p>
+                        <i class="fa fa-envelope mr-3"></i> artisanclub@gmail.com</p>
+                    <p>
+                        <i class="fa fa-phone mr-3"></i> + 880 1994-675430</p>
+                    <p>
+                        <i class="fa fa-print mr-3"></i> + 880 1715-923410</p>
+                </div>
+                <!--/.Fourth column-->
+
+            </div>
+        </div>
+        <!--/.Footer Links-->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href="https://mdbootstrap.com/bootstrap-tutorial/"> MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+
+
+</body>
+</html>

@@ -35,5 +35,5 @@ urlpatterns = [
     path('ShowBlogs/', Blog_views.showBlog,name='ShowBlogs'),
     path('InsertBlogs/', Blog_views.insertBlog,name='InsertBlogs'),
     path('accounts/',include('django.contrib.auth.urls')),
-    path('review/<int:s_id>', EventView.review_after_submit, name='review')
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
