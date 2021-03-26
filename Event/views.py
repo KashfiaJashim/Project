@@ -96,4 +96,4 @@ def review_after_submit(request, s_id):
         'form': form,
         'already_reviewed': already_reviewed
     }
-    return render(request, 'Event/show_event_details.html', context)
+    return render(request, 'Event/detail_event_review.html', context)
