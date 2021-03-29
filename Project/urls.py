@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from Profile import views as profileView
 from Artwork import views as Artworkview
 from Blog import views as Blog_views
+from Event import views as EventView
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -33,5 +34,6 @@ urlpatterns = [
     path('InsertArtwork/', Artworkview.insertArtwork, name='InsertArtwork'),
     path('ShowBlogs/', Blog_views.showBlog,name='ShowBlogs'),
     path('InsertBlogs/', Blog_views.insertBlog,name='InsertBlogs'),
-    path('accounts/',include('django.contrib.auth.urls'))
+    path('accounts/',include('django.contrib.auth.urls')),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

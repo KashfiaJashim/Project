@@ -29,7 +29,7 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'Homepage' %}">Home <span class="sr-only">(current)</span></a>
-
+      </li>
         <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Profile
@@ -57,8 +57,8 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{% url 'Competition' %}">Competitions</a>
-          <a class="dropdown-item" href="{% url 'SubmitCompetition' %}">Submission</a>
-           <a class="dropdown-item" href="{% url 'ShowSubmission' %}">Show Submitted Artwork</a>
+          <a class="dropdown-item" href="{% url 'SubmitCompetition' %}">Submit Art</a>
+            <a class="dropdown-item" href="{% url 'ShowSubmission' %}">Show Submitted Artwork</a>
 
 
         </div>
@@ -73,7 +73,8 @@
 
         </div>
       </li>
-         <li class="nav-item active">
+
+     <li class="nav-item active">
          {% if user.is_authenticated %}
             <h3 style="color: #aaaaaa">{{ user.username }}</h3>
         {% else %}
@@ -98,8 +99,9 @@
 
 
 
+
     </ul>
-    <form method="POST" action="{% url 'Competition' %}" >
+    <form method="POST" action="{% url 'ShowArtwork' %}" >
                 {% csrf_token %}
 
               <input  type="search" name="search">
@@ -109,6 +111,8 @@
   </div>
 </nav>
 <!-- nav -->
+
+
 
 
 
@@ -163,10 +167,6 @@
                 <!--/.Second column-->
 
                  <div style="margin: 5px 0;">
-            <a href="#"><i class="fa fa-dribbble"></i></a>
-            <a href="#"><i class="fa fa-twitter"></i></a>
-            <a href="#"><i class="fa fa-linkedin"></i></a>
-            <a href="#"><i class="fa fa-facebook"></i></a>
 
 
 

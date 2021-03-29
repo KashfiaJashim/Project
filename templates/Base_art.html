@@ -58,7 +58,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="{% url 'Competition' %}">Competitions</a>
           <a class="dropdown-item" href="{% url 'SubmitCompetition' %}">Submission</a>
-           <a class="dropdown-item" href="{% url 'ShowSubmission' %}">Show Submitted Artwork</a>
+            <a class="dropdown-item" href="{% url 'ShowSubmission' %}">Show Submitted Artwork</a>
 
 
         </div>
@@ -73,6 +73,7 @@
 
         </div>
       </li>
+
          <li class="nav-item active">
          {% if user.is_authenticated %}
             <h3 style="color: #aaaaaa">{{ user.username }}</h3>
@@ -98,8 +99,10 @@
 
 
 
+
+
     </ul>
-    <form method="POST" action="{% url 'Competition' %}" >
+    <form method="POST" action="{% url 'ShowArtwork' %}" >
                 {% csrf_token %}
 
               <input  type="search" name="search">
@@ -109,6 +112,8 @@
   </div>
 </nav>
 <!-- nav -->
+
+
 
 
 
