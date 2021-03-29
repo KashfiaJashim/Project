@@ -34,6 +34,12 @@ urlpatterns = [
     path('InsertArtwork/', Artworkview.insertArtwork, name='InsertArtwork'),
     path('ShowBlogs/', Blog_views.showBlog,name='ShowBlogs'),
     path('InsertBlogs/', Blog_views.insertBlog,name='InsertBlogs'),
+    path('Competition/',EventView.showcompetition,name='Competition'),
+    path('Competition/<int:comp_id>', EventView.showDetails, name='detail_view'),
+    path('SubmitCompetition/', EventView.submitart, name='SubmitCompetition'),
+    path('ShowSubmission/', EventView.showSubmission, name='ShowSubmission'),
+    path('ShowSubmission/<int:s_id>', EventView.showDetails2, name='detail_view'),
+    path('review/<int:s_id>', EventView.review_after_submit, name='review'),
     path('accounts/',include('django.contrib.auth.urls')),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

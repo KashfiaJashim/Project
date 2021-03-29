@@ -45,7 +45,7 @@ def submitart(request):
     }
     return render(request, 'Event/submitart.html', context)
 
-
+#event_details
 def showDetails(request, comp_id):
     searched_comp = get_object_or_404(Competition, id=comp_id)
     context = {
@@ -97,3 +97,30 @@ def review_after_submit(request, s_id):
         'already_reviewed': already_reviewed
     }
     return render(request, 'Event/show_art_details.html', context)
+
+
+def showDetails2(request, s_id):
+
+    searched_s = get_object_or_404(SubmitCompetition, id=s_id)
+
+    form = ReviewForm()
+
+    if request.method == "POST":
+        form = ReviewForm(request.POST)
+
+        if form.is_valid:
+            instance = form.save(commit=False)
+            instance.user = request.user
+            instance.save()
+
+            searched_s.reviews.add(instance)
+            searched_s.save()
+
+    context = {
+        'search': searched_s,
+        'form': form
+    }
+
+
+    return render(request, 'Event/show_art_details.html', context)
+
