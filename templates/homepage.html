@@ -1,11 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home Page</title>
-</head>
-<body>
-<p>welcome to the art gallery</p>
+{% extends 'Base.html' %}
 
-</body>
-</html>
+{% load static %}
+
+{% block content %}
+
+
+    <h3 align="center"><i>Welcome to Artisans club</i></h3><br>
+    <center><img src="https://previews.123rf.com/images/karnav/karnav1612/karnav161202322/69695958-paints-and-brushes.jpg" hight="30" width="1260" class="img-fluid" alt="Responsive image"></center><br><br>
+    <br>
+    <br>
+
+
+    <strong><h2><i>About Us</i></h2></strong><br>
+
+    <p>
+        <i>
+           <h4> Life is better with color. Why not brighten up your walls with a new painting ? <strong>ARTISANS CLUB</strong>  is a platform where artist can show their artistic
+            talents.Ever wondered what goes an artist's mind when they paint? What they use for inspiration?</h4>
+        </i>
+    </p>
+
+    <p>
+        <i>
+            <h4>The art world can be confusing. At ARTISANS CLUB, however, we believe art is for everyone. If you want to publish your own art artisans club is the best platform for you.
+                ARTISANS CLUB is the ideal place for artists and galleries to connect!It is a very unique opportunity for artist to grow themselves by promoting.</h4>
+        </i>
+    </p>
+    <P>
+        <i>
+            <h4>Explore all kind of art works along with digital prints of famous art works of great masters without going anywhere.</h4>
+        </i>
+    </P>
+
+    <div class="card-group">
+      <div class="card">
+        <img src="{% static "image/picture2.jpg" %}" class="card-img-top" alt="Covid image" height="400" width="250" >
+        <div class="card-body">
+          <h5 class="card-title"><i>Image Topic</i></h5>
+          <p class="card-text">
+              <i>This picture represents the situation that is going through all over the world. The sacrifices our front line
+                  works have given are shown here.</i>
+          </p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static "image/picture3.jpg" %}" class="card-img-top" alt="music picture" height="400" width="250">
+        <div class="card-body">
+          <h5 class="card-title"><i>Image Topic</i></h5>
+            <p class="card-text"><i>This image represents the musicians and their way of representing their work.</i></p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="{% static "image/picture4.jpg" %}" class="card-img-top" alt="..." height="400" width="250">
+        <div class="card-body">
+          <h5 class="card-title"><i>Image Topic</i></h5>
+            <p class="card-text"><i>The picture represents a local market. Where you can get live animal as well as veggies and others.</i></p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+
+
+
+{% endblock content %}

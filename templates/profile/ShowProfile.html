@@ -1,17 +1,68 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Show Profile</title>
-</head>
-<body>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
 
-    <h2>Your Profile</h2>
-    <img src="{{ profile.Profile_pic.url }}" width="200"  >
-    <h2><b>Name: </b></h2><h4> {{ profile.Full_name }}</h4>
-    <h2><b>Email: </b></h2><h4> {{ profile.email }}</h4>
-    <h2><b>Contact No: </b></h2><h4>{{ profile.contact_no }}</h4>
+.title {
+  color: grey;
+  font-size: 15px;
+}
 
-</body>
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
 
-</html>
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+
+{% extends 'Base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+    <h2 style="text-align:center">Profile</h2>
+
+        <div class="card">
+          <img src="{{ profile.Profile_picture.url }}" width="300"  >
+            <h3><b>Name</b></h3>:<h4> {{ profile.Full_name }}</h4>
+            <p class="title"><h3><b>Email:</b><h4> {{ profile.email }}</h4></p>
+            <p><h3><b>Contact No</b></h3>:<h4>{{ profile.contact_no }}</h4</p>
+          <div style="margin: 5px 0;">
+            <a href="#"><i class="fa fa-dribbble"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-linkedin"></i></a>
+            <a href="#"><i class="fa fa-facebook"></i></a>
+
+
+
+
+        </div>
+        </div>
+
+
+{% endblock content %}

@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User Registration</title>
-</head>
-<body>
+{% extends 'Base.html' %}
+
+{% block content %}
+
+<h2>Create your account here</h2>
 <form method="POST">
-   {% csrf_token %}
-    {{ user_form.as_p }}
-    <input type="submit">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type = "submit">
 
 </form>
 
-</body>
-</html>
+{% endblock content %}

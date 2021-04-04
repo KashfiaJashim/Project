@@ -26,10 +26,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('homepage/', profileView.showHome, name='homepage'),
+    path('homepage/', profileView.showHome, name='Homepage'),
     path('signup/', profileView.registration, name='signup'),
-    path('createProfile/', profileView.createprofile, name='createProfile'),
-    path('showProfile/', profileView.showProfile, name='showProfile'),
+    path('createProfile/', profileView.createprofile, name='CreateProfile'),
+    path('showProfile/', profileView.showProfile, name='ShowProfile'),
     path('ShowArtwork/', Artworkview.showArtwork, name='ShowArtwork'),
     path('InsertArtwork/', Artworkview.insertArtwork, name='InsertArtwork'),
     path('ShowBlogs/', Blog_views.showBlog,name='ShowBlogs'),
