@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 def showHome(request):
-    return render(request, 'Homepage/homepage.html')
+    return render(request, 'Homepage/ShowHome.html')
 
 
 # user_registration.

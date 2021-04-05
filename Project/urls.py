@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
-from Profile import views as profileView
+from Profile import views as ProfileView
 from Artwork import views as Artworkview
 from Blog import views as Blog_views
 from Event import views as EventView
@@ -26,10 +26,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Homepage/', profileView.showHome, name='Homepage'),
-    path('signup/', profileView.registration, name='signup'),
-    path('createProfile/', profileView.createprofile, name='CreateProfile'),
-    path('showProfile/', profileView.showProfile, name='ShowProfile'),
+    path('homepage/',ProfileView.showHome,name='Homepage'),
+    path('signup/', ProfileView.registration, name='signup'),
+    path('createProfile/', ProfileView.createprofile, name='CreateProfile'),
+    path('showProfile/', ProfileView.showProfile, name='ShowProfile'),
     path('ShowArtwork/', Artworkview.showArtwork, name='ShowArtwork'),
     path('ShowArtwork/<int:artwork_id>', Artworkview.showDetails, name='detail_view'),
     path('InsertArtwork/', Artworkview.insertArtwork, name='InsertArtwork'),
