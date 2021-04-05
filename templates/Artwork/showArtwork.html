@@ -1,39 +1,37 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Edit Profile</title>
-</head>
-<body>
+{% extends 'Base.html' %}
+
+{% load static %}
+
+{% block content %}
 
 
    <center> <h2 style="color: black"> ARTWORK</h2></center><br>
-    <center><img src="https://mymodernmet.com/wp/wp-content/uploads/2019/12/dave-pollot-thrift-store-paintings-1.jpg" hight="60" width="1000" class="img-fluid" alt="Responsive image"></center><br><br>
+    <center><img src="https://static.bimago.com/mediacache/catalog/product/cache/8/1/49318/image/650x440/e8560bf2b26ce39d939f0bddbe704f65/49318_1.jpg" hight="100" width="1200" class="img-fluid" alt="Responsive image"></center><br><br>
     <br>
     <br>
 
 
 
     <center><h2 style="color: black">What is Artwork?</h2></center><br>
-    <p><h3> <i>Art is a highly diverse range of human activities engaged in creating visual,
+    <p><h6> <i>Art is a highly diverse range of human activities engaged in creating visual,
             auditory, or performed artifacts— artworks—that express the author’s imaginative or technical skill,
             and are intended to be appreciated for their beauty or emotional power. Art may be characterized in
             terms of mimesis (its representation of reality), expression, communication of emotion, or other
             qualities. Though the definition of what constitutes art is disputed and has changed over time,
             general descriptions center on the idea of imaginative or technical skill stemming from human agency
-            and creation.</h3></p></i>
+            and creation.</h6></p></i>
 
 
 
-    <p><h3>
+    <p><h6>
        <i> Art is often examined through the interaction of the principles and elements of art.
         The principles of art include movement, unity, harmony, variety, balance, contrast,
         proportion and pattern. The elements include texture, form, space, shape, color, value and line.
         The various interactions between the elements and principles of art help artists to organize
         sensorially pleasing works of art while also giving viewers a framework within which to analyze and
         discuss aesthetic ideas.</i>
-    </p> </h3><br>
+    </p></h6><br>
     <br>
     <br>
    <i><h2 style="color: black">ARTWORK GALLERY</i></h2><br>
@@ -49,9 +47,10 @@
                   <p class="card-text"> <h3>{{ artwork.title }}</h3></p>
 
                         {# http://127.0.0.1:8000/products/    #}
-
-
-
+                <a href="{{ artwork.id }}">
+                    {# http://127.0.0.1:8000/products/product_id    #}
+                    <button type="button" class="btn btn-outline-primary">Details</button>
+                </a>
                     </div>
       </div>
 
@@ -61,9 +60,7 @@
 
 
         </div>
-</body>
-</html>
-
+{% endblock content %}
 
 
 

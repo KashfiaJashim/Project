@@ -26,11 +26,12 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('homepage/', profileView.showHome, name='Homepage'),
+    path('Homepage/', profileView.showHome, name='Homepage'),
     path('signup/', profileView.registration, name='signup'),
     path('createProfile/', profileView.createprofile, name='CreateProfile'),
     path('showProfile/', profileView.showProfile, name='ShowProfile'),
     path('ShowArtwork/', Artworkview.showArtwork, name='ShowArtwork'),
+    path('ShowArtwork/<int:artwork_id>', Artworkview.showDetails, name='detail_view'),
     path('InsertArtwork/', Artworkview.insertArtwork, name='InsertArtwork'),
     path('ShowBlogs/', Blog_views.showBlog,name='ShowBlogs'),
     path('InsertBlogs/', Blog_views.insertBlog,name='InsertBlogs'),

@@ -1,0 +1,29 @@
+{% extends 'Base_art.html' %}
+
+{% block content  %}
+
+
+        <div class="card bg-light mb-2`" >
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img src="{{ search.art.url }}" class="card-img" alt="...">
+            </div>
+
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{ search.id }}</h5>
+                <p class="card-text">
+                  <h3> Title: </h3><h4> {{ search.title }}</h4> <br>
+                   <h3> Medium: </h3> {{ search.medium }} <br>
+                   <h3> Category: </h3> {{ search.category }} <br>
+                    <h3> Art Description: </h3>{{ search.art_description }} <br>
+                </p>
+                <p class="card-text"><small class="text-muted"></small></p>
+{#  updatecart/product_id #}
+                  <a href="" ></a>
+
+              </div>
+            </div>
+          </div>
+        </div>
+{% endblock content %}

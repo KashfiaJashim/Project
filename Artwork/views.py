@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Artwork
 from .forms import ArtworkForm
 from django.contrib.auth.decorators import login_required
@@ -37,3 +37,12 @@ def insertArtwork(request):
         'message': message
     }
     return render(request, 'Artwork/insertArtwork.html', context)
+
+def showDetails(request, artwork_id):
+
+    searched_artwork = get_object_or_404(Artwork, id=artwork_id)
+    context = {
+        'search': searched_artwork,
+
+    }
+    return render(request, 'Artwork/show_artwork_details.html', context)
